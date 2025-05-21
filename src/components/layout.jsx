@@ -1,10 +1,9 @@
 import { getSystemInfo } from "zmp-sdk";
 import {
-  AnimationRoutes,
   App,
+  ZMPRouter,
   Route,
   SnackbarProvider,
-  ZMPRouter,
 } from "zmp-ui";
 
 import HomePage from "../pages/index";
@@ -14,12 +13,11 @@ const Layout = () => {
     <App theme={getSystemInfo().zaloTheme}>
       <SnackbarProvider>
         <ZMPRouter>
-          <AnimationRoutes>
-            <Route path="/" element={<HomePage />}></Route>
-          </AnimationRoutes>
+          <Route path="/" element={<HomePage />} />
         </ZMPRouter>
       </SnackbarProvider>
     </App>
   );
 };
+
 export default Layout;
