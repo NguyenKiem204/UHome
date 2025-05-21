@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { openMiniApp } from "zmp-sdk";
 import { Box, Page, Text, Button, Icon, Header, Avatar } from "zmp-ui";
 import { Bell, Home, MessageCircle, User, Heart, ChevronRight, FileText, Calendar, FileCheck, Newspaper } from "lucide-react";
@@ -38,7 +39,7 @@ const BlogItem = ({ image, title, date, category }) => (
 // Component cho trang chủ
 function HomePage() {
   const [activeTab, setActiveTab] = useState("home");
-
+  const navigate = useNavigate();
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -125,7 +126,7 @@ function HomePage() {
                 icon={<MessageCircle size={20} className="text-green-500" />}
                 title="Gửi phản ánh"
                 description="Gửi ý kiến phản ánh của bạn"
-                onClick={() => { }}
+                onClick={() => navigate("/feedback")}
               />
 
               <FeatureItem
